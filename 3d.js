@@ -6,6 +6,9 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('three-canvas'), antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 
+const backgroundColor = 0xffffff; // Set the background color
+scene.background = new THREE.Color(backgroundColor);
+
 
 function createSquareGrid(numCellsX, numCellsY, cellSize, color = 0xffffff) {
     const lines = [];
@@ -40,7 +43,7 @@ const GRID_WIDTH = NUM_CELLS_X * CELL_SIZE;
 const GRID_HEIGHT = NUM_CELLS_Y * CELL_SIZE;
 const HALF_GRID_WIDTH = GRID_WIDTH / 2;
 const HALF_GRID_HEIGHT = GRID_HEIGHT / 2;
-const GRID_COLOUR = 0x4400ff;
+const GRID_COLOUR = 0xdddddd;
 
 const top_grid1 = createSquareGrid(NUM_CELLS_X, NUM_CELLS_Y, CELL_SIZE, GRID_COLOUR);
 const top_grid2 = createSquareGrid(NUM_CELLS_X, NUM_CELLS_Y, CELL_SIZE, GRID_COLOUR);
@@ -64,7 +67,7 @@ function animate() {
     requestAnimationFrame(animate);
   
     // scroll both grids to the left
-    const speed = 0.0125;
+    const speed = 0.005;
     top_grid1.position.x -= speed;
     top_grid2.position.x -= speed;
     bot_grid1.position.x -= speed;

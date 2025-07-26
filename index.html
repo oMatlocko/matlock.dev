@@ -5,10 +5,7 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<title>Homepage</title>
     	<link rel="stylesheet" href="style.css">
- 	</head>
-	<body>
 
-		<canvas id="three-canvas"></canvas>
 		<script type="importmap">
 			{
 				"imports": {
@@ -18,11 +15,24 @@
 			}
 		</script>
 		<script type="module" src="3d.js"></script>
-		<script src="main.js"></script>
+		<script type="module" src="main.js"></script>
+ 	</head>
 
+	<body>
 
-		<header>
-			<a class="logo-text" href="index.html">matlock.dev - coming soon...</a>
-		</header>
+		<canvas id="three-canvas"></canvas>
+		
+		<h1>matlock.dev</h1>
+
+		<div class="scroller">
+			<ul class="scroller-content scroller__inner">
+				<li>matlock.dev</li>
+				<li>▼▼</li>
+				<li>homepage</li>
+				<li>▼▼</li>
+
+			</ul>
+		</div>
+
 	</body>
 </html>

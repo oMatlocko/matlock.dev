@@ -1,23 +1,74 @@
 body {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    overflow: hidden;
-    
+}
+
+h1 {
+    position: absolute;
+    font-family: 'planet-kosmos';
+    left: 100px;
+    top: 2%;
+    font-size: 5rem;
 }
 
 canvas {
-    display: block;
+    position: absolute;
     width: 100vw;
     height: 100vh;
     z-index: 0;
 }
 
-.logo-text {
+.scroller {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    color: #ffffff;
-    text-decoration: none;
+    left: 0;
+    height: 100vh;
+    width: 40px;
+    background-color: black;
+    z-index: 1;
+}
+
+.scroller-content {
+    margin: 0;
+    padding: 0;
+    padding-inline: 0;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.scroller__inner {
+    position: absolute;
+    left: 25%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8rem; /* IMPORTANT: tied to scroll animation (see @keyframes scroll) */
+    writing-mode: vertical-lr;
+    color: white;
+}
+
+.scroller[data-animated="true"] {
+    overflow: hidden;
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    animation: scroll 45s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateY(-50%)
+    }
+    to {
+        transform: translateY(calc(0% + 4rem)); /* add half the gap from .scroller__inner */
+    }
+}
+
+@font-face {
+    font-family: 'planet-kosmos';
+    src: url(fonts/planet-kosmos.regular.woff2) format('woff2');
 }
