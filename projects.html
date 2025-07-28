@@ -3,15 +3,44 @@
 	<head>
 		<meta charset="UTF-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<title>Projects</title>
+    	<title>projects</title>
     	<link rel="stylesheet" href="style.css">
+
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.module.js",
+					"three/addons/": "https://cdn.jsdelivr.net/npm/three@0.153.0/examples/jsm/"
+				}
+			}
+		</script>
+		<script type="module" src="3d.js"></script>
+		<script type="module" src="main.js"></script>
  	</head>
 
-	<script src="main.js"></script>
-
 	<body>
-		<header>
-			<a class="logo-text">matlock.dev</a>
-		</header>
+
+		<canvas id="three-canvas"></canvas>
+
+		<div class="nav-bar">
+			<a class="nav-bar__logo" href="index.html">matlock.dev</a>
+			<ul class="nav-bar__links">
+				<li><a class="nav-bar__link" href="index.html">home</a></li>
+				<li><a class="nav-bar__link" href="about.html">about</a></li>
+				<li><a class="nav-bar__link" href="projects.html">projects</a></li>
+				<li><a class="nav-bar__link" href="contact.html">contact</a></li>
+			</ul>
+		</div>
+
+
+		<div class="scroller">
+			<ul class="scroller-content scroller__inner">
+				<li>matlock.dev</li>
+				<li>▼▼</li>
+				<li>projects</li>
+				<li>▼▼</li>
+			</ul>
+		</div>
+
 	</body>
 </html>
