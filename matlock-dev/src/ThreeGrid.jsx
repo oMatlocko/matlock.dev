@@ -19,7 +19,7 @@ export default function ThreeGrid() {
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-    scene.background = new THREE.Color(0xffffff);
+    scene.background = new THREE.Color(0xFAFBEF);
 
     function createSquareGrid(numCellsX, numCellsY, cellSize, color = 0xffffff) {
       const lines = [];

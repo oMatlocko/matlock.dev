@@ -1,48 +1,112 @@
-body {
+:root {
+    --scroller-width: 2rem; /* width of the vertical scroller */
+    --header-height: 8rem; /* height of the header */
+    --footer-height: 4rem; /* height of the footer */
+}
+
+* {
     margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 header {
-    position: absolute;
-    margin: 0;
-    left: 0;
+    position: sticky;
+    display: flex;
     top: 0;
     width: 100%;
+    height: var(--header-height);
+    gap: 2rem;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    z-index: 1;
 }
 
-#three-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: var(--footer-height);
+    text-align: center;
+    font-size: 1rem;
 }
+
+nav {
+    display: flex;
+    min-width: 50rem;
+    align-items: center;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-left: var(--scroller-width);
+    width: calc(100% - var(--scroller-width));
+    overflow-x: hidden;
+}
+
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.nav-list {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.nav-list a:hover {
+    color: limegreen;
+}
+
 
 .scroller-vertical {
-    position: absolute;
+    position: fixed;
     display: flex;
     top: 0;
     left: 0;
     height: 100vh;
-    width: 2vw;
+    width: var(--scroller-width);
     background-color: black;
     overflow: hidden;
     justify-content: center;
     z-index: 1;
 }
 
+
 .scroller-vertical-content {
     position: absolute;
     display: inline-flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 8rem;
+    gap: 8rem; /* important: see @keyframes scrollDown if you want to change this value */
     writing-mode: vertical-lr;
     text-orientation: mixed;
-    margin: 0;
-    padding: 0;
     width: max-content;
     list-style: none;
     white-space: nowrap;
@@ -50,18 +114,28 @@ header {
     animation: scrollDown 30s linear infinite;
 }
 
+
 .scroller-vertical-item {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1vw;
+    font-size: 1rem;
+}
+
+#three-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* behind everything */
 }
 
 #title-logo {
-    position: absolute;
-    margin: 0;
-    top: 0;
-    left: 0;
+    position: relative;
     font-family: 'planet-kosmos';
+    font-weight: normal;
+    font-size: 3rem;
+    top: 3px;
 }
 
 @font-face {
@@ -69,11 +143,12 @@ header {
     src: url(fonts/planet-kosmos.regular.woff2) format('woff2');
 }
 
+
 @keyframes scrollDown {
     from {
         transform: translateY(-50%);
     }
     to {
-        transform: translateY(calc(0% + 4rem)); /* add half the gap from .scroller-vertical-content */
+        transform: translateY(calc(0% + 4rem)); /* add half the gap from scroller-vertical-content */
     }
 }
