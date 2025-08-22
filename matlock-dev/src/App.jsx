@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
 import ThreeGrid from './ThreeGrid.jsx';
@@ -12,14 +12,24 @@ const Contact = lazy(() => import('./Contact'));
 
 
 function App() {
+  const location = useLocation();
+
+  const routeLabels = {
+    "/": "homepage",
+    "/about": "about",
+    "/projects": "projects",
+    "/contact": "contact"
+  };
+
+  const label = routeLabels[location.pathname] || "UNKNOWN PAGE";
 
   return(
     <>
-        <ScrollerVertical/>
+        <ScrollerVertical label={label} />
 
         <div className="content">
-            <ThreeGrid/>
-            <Header/>
+            <ThreeGrid />
+            <Header />
 
             <main className="main-content">
               <Suspense fallback={<div>Loading...</div>}>
@@ -32,7 +42,7 @@ function App() {
               </Suspense>
             </main>
 
-            <Footer/>
+            <Footer />
         </div>
     </>
   );
