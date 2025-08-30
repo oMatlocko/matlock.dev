@@ -1,4 +1,4 @@
-function ScrollerVertical({ label, repeat = 4 }) {
+function ScrollerVertical({ label, repeat = 6 }) {
 
   const items = ["matlock.dev", "➤➤", label, "➤➤"];
 
