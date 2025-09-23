@@ -9,6 +9,7 @@ const Home = lazy(() => import('./Home'));
 const About = lazy(() => import('./About'));
 const Projects = lazy(() => import('./Projects'));
 const Contact = lazy(() => import('./Contact'));
+const ProjectGaz = lazy(() => import('./projects/ProjectGaz.jsx'));
 
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
     "/": "homepage",
     "/about": "about",
     "/projects": "projects",
-    "/contact": "contact"
+    "/contact": "contact",
+    "/projects/gazprea-compiler": "gazprea compiler"
   };
 
   const label = routeLabels[location.pathname] || "UNKNOWN PAGE";
@@ -38,6 +40,7 @@ function App() {
                       <Route path="/about" element={<About />} />
                       <Route path="/projects" element={<Projects />} />
                       <Route path="/contact" element={<Contact />} />
+                      <Route path="/projects/gazprea-compiler" element={<ProjectGaz />} />
                   </Routes>
               </Suspense>
             </main>
