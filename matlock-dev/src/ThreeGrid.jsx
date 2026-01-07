@@ -15,7 +15,7 @@ export default function ThreeGrid() {
 
     const renderer = new THREE.WebGLRenderer({
       canvas: canvasRef.current,
-      antialias: true,
+      antialias: false,
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -100,6 +100,13 @@ export default function ThreeGrid() {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("orientationchange", handleResize);
       window.removeEventListener("scroll", handleResize);
+
+    [top_grid1, top_grid2, bot_grid1, bot_grid2].forEach(grid => {
+      grid.geometry.dispose();
+      grid.material.dispose();
+      scene.remove(grid);
+    });
+      
       renderer.dispose();
     };
   }, []);

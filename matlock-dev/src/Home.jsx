@@ -51,6 +51,9 @@ function Home() {
                         <img src="Vitejs-logo.svg" className="tool"/>
                     </div>
                     <p>Take a look into matlock.dev's development.</p>
+                    <div className="card-thumbnail-container">
+                        <img src="early-site-mock.png" className="card-thumbnail"/>
+                    </div>
                 </div>
                 <div className="card">
                     <time>Summer 2025</time>
