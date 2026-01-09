@@ -71,7 +71,7 @@ time {
     display: flex;
     flex-direction: column;
     width: 60vw;
-    height: 65vh;
+    height: auto;
     background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2px) saturate(150%);
     -webkit-backdrop-filter: blur(2px) saturate(150%);
@@ -164,6 +164,18 @@ time {
                 radial-gradient(circle at bottom right, rgba(0,150,100,0.3), transparent 70%);
 
 
+}
+
+
+pre[class*="language-"] {
+    width: 80%;
+    max-height: none;
+    padding: 1em;
+    overflow: auto;
+    border-radius: 6px;
+    align-self: center;
+    overflow-y: visible;
+    overflow-x: auto;
 }
 
 
