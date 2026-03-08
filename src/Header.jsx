@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+import styles from './Header.module.css';
 
 function Header() {
     return(
-        <header>
-            <h1 id="title-logo">matlock.dev</h1>
-            <nav>
-                <ul className="nav-list">
+        <header className={styles.header}>
+            <h1 className={styles.titleLogo}>matlock.dev</h1>
+            <nav className={styles.nav}>
+                <ul className={styles.navList}>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/projects">Projects</Link></li>
