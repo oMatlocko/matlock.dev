@@ -1,0 +1,19 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-left: var(--scroller-width);
+    width: calc(100% - var(--scroller-width));
+    overflow-x: hidden;
+    background: radial-gradient(circle at top left, rgba(100,200,255,0.3), transparent 70%),
+                radial-gradient(circle at bottom right, rgba(0,150,100,0.3), transparent 70%);
+}
+
+.mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}

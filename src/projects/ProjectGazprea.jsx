@@ -1,4 +1,5 @@
 import GazSnippet from "./GazSnippet.jsx";
+import styles from './ProjectGazprea.module.css';
 
 const snippetHelloWorld =
 `procedure main() {
@@ -28,34 +29,34 @@ const snippetIdentifiers =
 function ProjectGaz() {
     return (
         <>
-        <div className="body-container">
-            <h1 className="project-title">Gazprea Compiler</h1>
+        <div className={styles.bodyContainer}>
+            <h1 className={styles.projectTitle}>Gazprea Compiler</h1>
             <h2>Overview</h2>
-            <p className="project-body">
-                The Gazprea Compiler was the main project for CMPUT 415 (Compiler Design) at UAlberta and effectively served as the capstone of my undergrad. It was by far the most demanding project I completed during my studies. Over the course of around two months, with hundreds of man-hours invested, my team and I were extremely proud of the final product we delivered.                
+            <p className={styles.projectBody}>
+                The Gazprea Compiler was the main project for CMPUT 415 (Compiler Design) at UAlberta and effectively served as the capstone of my undergrad. It was by far the most demanding project I completed during my studies. Over the course of around two months, with hundreds of man-hours invested, my team and I were extremely proud of the final product we delivered.
             </p>
-            <img src="../GazpreaLogo.png" className="project-body-image"/>
-            
-            <p className="project-body">
+            <img src="../GazpreaLogo.png" className={styles.projectBodyImage}/>
+
+            <p className={styles.projectBody}>
                 Gazprea is a statically and weakly typed imperative programming language, and the compiler we built for it handled the full pipeline: lexical analysis, parsing, semantic analysis, and backend code generation. By the end of the project, we had implemented a working compiler capable of translating Gazprea programs into executable code, complete with type checking, scope management, and meaningful error reporting.
             </p>
-            <p className="project-body">
+            <p className={styles.projectBody}>
                 The repository for this project is closed source by request of the course instructors. However, I am happy to discuss details, specifications, share code, or demo the compiler if you reach out to me!
             </p>
             <h2>Features</h2>
 
-            <p className="project-body">NOTE: This feature summary is not exhaustive. There are features and restrictions that have been omitted for the sake of brevity. This project entry would be way too long if I included everything :)</p>
+            <p className={styles.projectBody}>NOTE: This feature summary is not exhaustive. There are features and restrictions that have been omitted for the sake of brevity. This project entry would be way too long if I included everything :)</p>
 
             <h3>Program Structure</h3>
-            <p className="project-body">Every Gazprea program must include a main procedure. All code within this procedure is executed when the program runs.</p>
+            <p className={styles.projectBody}>Every Gazprea program must include a main procedure. All code within this procedure is executed when the program runs.</p>
             <GazSnippet code={snippetHelloWorld}/>
 
             <h3>Comments</h3>
-            <p className="project-body">Gazprea supports both single-line and multi-line comments.</p>
+            <p className={styles.projectBody}>Gazprea supports both single-line and multi-line comments.</p>
             <GazSnippet code={snippetComments}/>
 
             <h3>Identifiers</h3>
-            <p className="project-body">Identifiers for variables, functions, procedures, and user-defined types in Gazprea can consist of letters, digits, and underscores, but must start with a letter or underscore. They are case-sensitive and cannot be reserved keywords.</p>
+            <p className={styles.projectBody}>Identifiers for variables, functions, procedures, and user-defined types in Gazprea can consist of letters, digits, and underscores, but must start with a letter or underscore. They are case-sensitive and cannot be reserved keywords.</p>
             <GazSnippet code={snippetIdentifiers}/>
 
 

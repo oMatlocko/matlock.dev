@@ -1,3 +1,5 @@
+import styles from './ScrollerVertical.module.css';
+
 function ScrollerVertical({ label, repeat = 6 }) {
 
   const items = ["matlock.dev", "➤➤", label, "➤➤"];
@@ -7,15 +9,15 @@ function ScrollerVertical({ label, repeat = 6 }) {
 
 
   return (
-    <div className="scroller-vertical">
-      <div className="scroller-vertical-content">
+    <div className={styles.scrollerVertical}>
+      <div className={styles.scrollerVerticalContent}>
         {repeatedItems.map((item, index) => {
           // only the first set should be read by screen readers
           const isCopy = index >= items.length;
           return (
             <div
               key={index}
-              className="scroller-vertical-item"
+              className={styles.scrollerVerticalItem}
               aria-hidden={isCopy ? "true" : undefined}
             >
               {item}

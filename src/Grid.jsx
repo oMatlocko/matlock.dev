@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from 'three';
+import styles from './Grid.module.css';
 export default function ThreeGrid() {
   const canvasRef = useRef(null);
 
@@ -110,5 +111,5 @@ export default function ThreeGrid() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} id="three-canvas"/>;
+  return <canvas ref={canvasRef} className={styles.canvas}/>;
 }

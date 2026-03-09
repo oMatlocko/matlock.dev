@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { lazy } from 'react';
+import styles from './App.module.css';
 
 import Grid from './Grid.jsx';
 import ScrollerVertical from './ScrollerVertical.jsx';
@@ -29,11 +30,11 @@ function App() {
     <>
       <ScrollerVertical label={label} />
 
-      <div className='content'>
+      <div className={styles.content}>
         <Grid />
         <Header />
 
-        <main className='main-content'>
+        <main className={styles.mainContent}>
           
           <Routes>
             <Route path='/' element={<Home />} />

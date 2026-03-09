@@ -1,6 +1,8 @@
+import styles from './Card.module.css';
+
 export default function Contact() {
   return (
-    <div className="card">
+    <div className={styles.card}>
       <h2>Contact Me:</h2>
       <p><b>Email:</b>&nbsp;garrett@matlock.dev</p>
       

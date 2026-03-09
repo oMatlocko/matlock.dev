@@ -1,0 +1,10 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: var(--footer-height);
+    text-align: center;
+    font-size: 0.6rem;
+    backdrop-filter: blur(2px);
+}
