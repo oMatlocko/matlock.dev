@@ -35,6 +35,10 @@ time {
     line-height: 1.6;
 }
 
+/* Gazprea token colours */
+.token.comment  { color: #6b7280; font-style: italic; }
+.token.type     { color: #8b5cf6; }
+
 /* Global override for PrismJS-generated elements */
 pre[class*="language-"] {
     width: 80%;

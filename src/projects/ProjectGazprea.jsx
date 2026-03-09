@@ -20,10 +20,22 @@ const snippetIdentifiers =
     integer year = 2024;
     string _language = "Gazprea";
     
-    // Invalid identifiers (uncommenting these will cause errors)
-    // integer 2ndVariable = 10; // Cannot start with a digit
-    // integer my-variable = 5; // Cannot contain hyphens
-    // integer if = 20; // Cannot be a reserved keyword
+    // Invalid identifiers
+    integer 2ndVariable = 10; // Cannot start with a digit
+    integer my-variable = 5; // Cannot contain hyphens
+    integer if = 20; // Cannot be a reserved keyword
+}`;
+
+const snippetTypes =
+`procedure main() {
+    boolean isTrue = true;
+    character myChar = 'g';
+    integer myInt = 6; // signed 32-bit integer
+    real myReal = 3.14; // supports scientific notation, e.g., 1.5e-10
+    tuple(integer, real) myTuple = (42, 2.718);
+    integer[5] myArray = [1, 2, 3, 4, 5]; // fixed-size array of integers
+    integer[2][2] my2DMatrix = [[1, 2], [4, 5]]; // fixed-size 2D array of integers
+    string myString = "Hello, Gazprea!"; // syntactic sugar for array of characters
 }`;
 
 function ProjectGaz() {
@@ -58,6 +70,10 @@ function ProjectGaz() {
             <h3>Identifiers</h3>
             <p className={styles.projectBody}>Identifiers for variables, functions, procedures, and user-defined types in Gazprea can consist of letters, digits, and underscores, but must start with a letter or underscore. They are case-sensitive and cannot be reserved keywords.</p>
             <GazSnippet code={snippetIdentifiers}/>
+
+            <h3>Data Types</h3>
+            <p className={styles.projectBody}>Gazprea supports the following data types:</p>
+            <GazSnippet code={snippetTypes}/>
 
 
             <h2>Front End</h2>
